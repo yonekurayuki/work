@@ -13,13 +13,10 @@ var photos = require("./routes/photos");
 var app = express();
 
 // view engine setup
+app.set("views",__dirname + "/views");
+app.set('view engine', 'ejs');
+app.set("photos",__dirname + "/public/photos");
 
-app.configure(function(){
-	app.set("views",__dirname + "/views");
-	app.set('view engine', 'ejs');
-	app.set("photos",__dirname + "/public/photos");
-
-});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
