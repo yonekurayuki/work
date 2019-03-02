@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="my-app">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/onsenui.css"/>
+  <link rel="stylesheet" href="./css/onsen-css-components.css"/>
+  <script src="./js/angular.min.js"></script>
+  <script src="./js/onsenui.min.js"></script>
+  <script src="./js/angular-onsenui.min.js"></script>
+</head>
+
+<body>
+  <ons-page>
+    <ons-toolbar>
+      <div class="center">My-app</div>
+      <div class="right">
+        <ons-toolbar-button>
+          <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+    <ons-tabbar>
+      <ons-tab page="tab1.html" label="Tab 1" icon="ion-home, material:md-home" active></ons-tab>
+      <ons-tab page="tab2.html" label="Tab 2" icon="md-settings"></ons-tab>
+    </ons-tabbar>
+  </ons-page>
+  <ons-template id="tab1.html">
+    <ons-page id="first-page" ng-controller="tempCtrl">
+      <p id="message">
+        This is the first page.
+      </p>
+      <div style="text-align: center">
+        <ons-segment id="segment" style="width: 180px">
+          <button>Fコイン</button>
+          <button>Zコイン</button>
+          <button>{{title}}</button>
+        </ons-segment>
+      </div>
+      <p style="text-align: center">
+        <ons-button>
+          Click me!
+        </ons-button>
+      </p>
+    </ons-page>
+  </ons-template>
+  <ons-template id="tab2.html">
+    <ons-page id="second-page" ng-controller="tempCtrl2">
+      <p id="message">
+        This is the second page.
+      </p>
+      <ons-select id="choose-sel">
+        <option value="basic">{{test}}</option>
+        <option value="material">Material</option>
+        <option value="underbar">Underbar</option>
+      </ons-select>
+      <div style="text-align: center; margin-top: 30px">
+        <p>
+          <ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>
+        </p>
+        <p>
+          <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+        </p>
+        <p style="margin-top: 30px;">
+          <ons-button >Sign in</ons-button>
+        </p>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <script src="./js/tempCtrl.js"></script>
+  <script src="./js/tempCtrl2.js"></script>
+
+</body>
+</html>
